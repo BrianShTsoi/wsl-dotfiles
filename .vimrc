@@ -4,8 +4,8 @@ set background=dark
 
 syntax on
 set nowrap
-"set scrolloff=8
-set sidescrolloff=5
+set scrolloff=8
+set sidescrolloff=3
 set sidescroll=10
 
 set tabstop=4
@@ -28,6 +28,8 @@ set smartcase
 
 set history=50
 set noswapfile
+
+set foldmethod=syntax
 
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"

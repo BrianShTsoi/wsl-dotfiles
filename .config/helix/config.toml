@@ -1,0 +1,33 @@
+theme = "catppuccin_mocha"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[editor]
+true-color = true
+auto-save = true
+line-number = "relative"
+scrolloff = 2
+bufferline = "always"
+
+[keys.insert]
+# j = { k = ["normal_mode", "move_char_left"]}
+j = { k = "normal_mode"}
+
+[keys.normal]
+# X = ["extend_line_up", "extend_to_line_bounds"]
+X = ["extend_line_above"]
+V = ["extend_to_line_bounds"]
+# ";" = ["keep_primary_selection", "collapse_selection"]
+
+[keys.normal.space]
+# X = ["extend_line_up", "extend_to_line_bounds"]
+# c = ":bc"
+q = ":bc"
+# Q = ":q!"
+e = ":w"
+
+[keys.select]
+# X = ["extend_line_up", "extend_to_line_bounds"]
+X = ["extend_line_above"]

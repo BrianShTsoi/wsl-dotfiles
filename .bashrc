@@ -132,6 +132,32 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 echo -e -n "\e[2 q"
 echo -e -n "\033[?12l"
 
-alias emorg="cd /mnt/c/Users/brian/OneDrive/org && emacs"
 #export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0 
-export GTK_THEME=Adwaita:dark
+alias cdF="cd /mnt/c/Users/brian/OneDrive/Documents/FASLOEPH"
+alias cdvilo="cd /mnt/c/Users/brian/OneDrive/Documents/FASLOEPH/02\ \(A\)\ Programming/2022-12\ vilo\ \(WSL\)/"
+alias cdFSO="cd /mnt/c/Users/brian/2023-02\ FSO"
+alias cdPL="cd /mnt/c/Users/brian/02\ \(A\)\ Programming\ on\ Laptop/"
+alias python='python3'
+alias em='emacsclient -t'
+
+fzf_dir() {
+    if [ -z "$1" ]; then
+        cd "$(find /mnt/c/Users/brian/Dropbox/ \
+            /mnt/c/Users/brian/OneDrive/Documents/ \
+            /mnt/c/Users/brian/02\ \(A\)\ Programming\ on\ Laptop/ \
+            -maxdepth 3 -type d | fzf)"
+    else
+        cd "$(find $1 -maxdepth 3 -type d | fzf)"
+    fi
+}
+alias f='fzf_dir'
+alias fx='fzf_dir; hx .'
+
+
+. "$HOME/.cargo/env"
+# [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+[ -z "$TMUX"  ] && tmux
+
+source /home/brian/.config/broot/launcher/bash/br
+
+export PATH="$HOME/go/bin:$PATH"
